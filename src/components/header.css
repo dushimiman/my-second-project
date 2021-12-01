@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+.container{
+    background-color: rgb(10, 10, 10);
+    height: 15vh;
+    width: 100%;
+    display: block;
+}
+.logo img{
+    
+    width: 10%;
+    height: 10vh;
+    margin: 30px;
+    margin-top: 1%;
+    background-color: rgb(36, 33, 33);
+}
+.logo{
+    height: 30%;
+}
+.navbar{
+   margin-left: 45%;
+    display: flex;
+    margin-top: 0;
+    border-end-start-radius: 50px;
+    border-end-end-radius: 40%;
+    margin-right: 3%;
+    
+   /* background-color: black; */
+}
+.navbar a{
+    padding: 2%;
+    margin-top: 0;
+    font-size: large;
+    color: blanchedalmond;
+    
+}
+.navbar a:hover{
+    background-color: rgb(189, 176, 176);
+}
