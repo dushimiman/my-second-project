@@ -9,10 +9,7 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faTelegram } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 
-import{
-    Routes, Route
-}
-from "react-router-dom";
+import{Routes, Route, useLocation} from "react-router-dom";
 import Aboutus from "../views/Aboutus";
 import Garelly from "../views/Garelly";
 import Booking from "../views/booking";
@@ -26,6 +23,7 @@ import DashLayout from '../components/dashboardLayout'
 import NewTourView from '../views/Dashboard/NewTour'
 const isUserLogedIn = localStorage.getItem("userLogedIn");
 const Index=()=>{
+    const currentUrl=useLocation().pathname;
 return(
     <>
     <Routes>
@@ -43,7 +41,7 @@ return(
         
     </Routes>
     {
-        isUserLogedIn?(
+        isUserLogedIn && currentUrl.includes("/dash")?(
             <DashLayout>
                 <Routes>
                     <Route path="/dash/NewTour" element={<NewTourView />}></Route>
@@ -51,7 +49,7 @@ return(
                 </Routes>
 
             </DashLayout>  )
-       :(<>you are not allowed</>)
+       :(<></>)
         }
         </>
 )

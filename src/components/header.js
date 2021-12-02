@@ -8,6 +8,9 @@ const Header =()=>{
     const [visible, setVisible]= useState(false)
     const onFinish =(values)=>{
         console.log(values)
+        localStorage.setItem("userLogedIn",true);
+          navigate("/dash/newtour");
+        
     }
     const navigate = useNavigate();
 
@@ -23,17 +26,16 @@ const Header =()=>{
         onCancel={()=>setVisible(false)}>
             <h1>Signin Form</h1>
             <Form onFinish={onFinish}>
-                <Form.Item label="email" name="email" rules={[{required:true}]}>
+                <Form.Item label="email" name="email" rules={[{required:"true" , type: "email"}]}>
                 <Input type="email"/>
                 </Form.Item>
-                <Form.Item label="passward" name="passward" rules={[{required:false}]}>
-                    <Input type="email"/>
+                <Form.Item label="password" name="password" rules={[{required:true}]}>
+                    <Input type="password"/>
                     </Form.Item>
                     <Button
-      htmllType="submit" onClick={()=>{
-          localStorage.setItem("userLogedIn",true);
-          navigate("/"); 
-      }}>{""}Login {""}
+      htmlType="submit" onClick={()=>{
+          
+      }}>Login
       </Button>
      
     
